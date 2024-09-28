@@ -1,0 +1,68 @@
+.largeArea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  background-color: #ff3535;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+
+  input {
+    width: 100%;
+    padding: 15px 15px;
+    border: 1px solid black;
+    margin-top: 10px;
+  }
+}
+
+.left-area {
+  background-color: antiquewhite;
+  flex: 1;
+}
+.right-area {
+  background-color: antiquewhite;
+  flex: 1;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 25px;
+}
+
+.card-selection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+}
+.expiry-date{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  input{
+    width: 40%;
+  }
+}
+
+
+
+
+.city-state {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+
+  input {
+    input {
+      width: 40%;
+    }
+  }
+}

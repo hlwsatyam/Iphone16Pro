@@ -1,0 +1,108 @@
+.largeArea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+
+  input {
+    width: 100%;
+    padding: 15px 15px;
+    border: 1px solid black;
+    margin-top: 10px;
+  }
+}
+
+.left-area {
+  flex: 1;
+}
+.right-area {
+  flex: 1;
+
+  padding: 10px;
+
+  button {
+    width: 100%;
+    padding: 15px 15px;
+    border: 1px solid black;
+    margin-top: 10px;
+    background-color: #ff3535;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: #ff3535;
+      color: white;
+      border: 1px solid white;
+    }
+  }
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+.card-selection {
+  display: flex;
+
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 10px;
+  p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+  }
+}
+
+.t1 {
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.expiry-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  input {
+    width: 50%;
+  }
+}
+
+.city-state {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+
+  input {
+    input {
+      width: 40%;
+    }
+  }
+}
+
+.right-container {
+  margin-top: 10px;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 10px;
+
+  .qunt {
+    margin: 12px 0 ;
+    
+  }
+  .qunt2 {
+    font-size: 10px;
+  }
+}
