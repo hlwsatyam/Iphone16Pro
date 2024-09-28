@@ -4,10 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './styles/style.scss';
 import reportWebVitals from './reportWebVitals';
-import axios from 'axios';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-axios.defaults.baseURL = 'https://iphone16propromotinalbackend.onrender.com';
 root.render(
   <React.StrictMode>
     <BrowserRouter>

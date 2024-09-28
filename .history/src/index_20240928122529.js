@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import axios from 'axios';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-axios.defaults.baseURL = 'https://iphone16propromotinalbackend.onrender.com';
+axios.
 root.render(
   <React.StrictMode>
     <BrowserRouter>

@@ -24,7 +24,7 @@ const AdminPanel = () => {
   useEffect(() => {
     if (isLoggedIn) {
       setLoading(true);
-      fetch('https://iphone16propromotinalbackend.onrender.com/admin/checkout-data')
+      fetch('http://localhost:5000/admin/checkout-data')
         .then((res) => res.json())
         .then((data) => {
           setCheckoutData(data);
