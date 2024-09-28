@@ -253,7 +253,7 @@ const ProductDetails = () => {
             currentIndex = (currentIndex + 1) % images.length; // Cycle through images
             setPreviewImg(images[currentIndex]);
             handleActive(currentIndex);
-        }, 4000);
+        }, 2000);
     
         // Cleanup interval on component unmount
         return () => clearInterval(interval);
@@ -303,7 +303,7 @@ const ProductDetails = () => {
                                     {[...Array(rateCount)].map((_, i) => <IoMdStar key={i} />)}
                                 </span>
                                 <span>|</span>
-                                <Link to=''>{ratings} Ratings</Link>
+                                <Link to="*">{ratings} Ratings</Link>
                             </div>
 
                             <div className="separator"></div>

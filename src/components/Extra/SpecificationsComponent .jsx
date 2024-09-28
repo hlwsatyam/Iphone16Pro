@@ -69,7 +69,7 @@ const styles = {
     textAlign: "center",
     fontSize: "28px",
     fontWeight: "bold",
-    color: "white",
+    color: "black",
     marginBottom: "20px",
   },
   subTitle: {
@@ -78,12 +78,12 @@ const styles = {
     marginBottom: "10px",
     display: "flex",
     alignItems: "center",
-    color: "white",
+    color: "black",
   },
   list: {
     listStyleType: "none",
     paddingLeft: "0",
-    color: "white",
+    color: "black",
   },
   listItem: {
     fontSize: "16px",

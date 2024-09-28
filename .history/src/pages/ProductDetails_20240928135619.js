@@ -303,7 +303,7 @@ const ProductDetails = () => {
                                     {[...Array(rateCount)].map((_, i) => <IoMdStar key={i} />)}
                                 </span>
                                 <span>|</span>
-                                <Link to=''>{ratings} Ratings</Link>
+                                <Link >{ratings} Ratings</Link>
                             </div>
 
                             <div className="separator"></div>

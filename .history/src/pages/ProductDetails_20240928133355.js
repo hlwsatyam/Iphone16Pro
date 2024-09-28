@@ -247,18 +247,7 @@ const ProductDetails = () => {
         handleActive(i);
     };
 
-    useEffect(() => {
-        let currentIndex = 0;
-        const interval = setInterval(() => {
-            currentIndex = (currentIndex + 1) % images.length; // Cycle through images
-            setPreviewImg(images[currentIndex]);
-            handleActive(currentIndex);
-        }, 4000);
-    
-        // Cleanup interval on component unmount
-        return () => clearInterval(interval);
-    }, [images]); // Depend on images
-    
+useEffect
 
 
     const [isOpen, setIsOpen] = useState(false)
@@ -284,12 +273,12 @@ const ProductDetails = () => {
                                         className={`tabs_item ${activeClass(i)}`}
                                         onClick={() => handlePreviewImg(i)}
                                     >
-                                        <img style={{ border: "1px solid black" }} src={img} alt="product-img" />
+                                        <img style={{border:"1px solid black"}} src={img} alt="product-img" />
                                     </div>
                                 ))}
                             </div>
                             <figure className="prod_details_img">
-                                <img style={{ border: "1px solid black" }} src={previewImg} alt="product-img" />
+                                <img  style={{border:"1px solid black"}}   src={previewImg} alt="product-img" />
                             </figure>
                         </div>
 
@@ -303,7 +292,7 @@ const ProductDetails = () => {
                                     {[...Array(rateCount)].map((_, i) => <IoMdStar key={i} />)}
                                 </span>
                                 <span>|</span>
-                                <Link to=''>{ratings} Ratings</Link>
+                                <Link to="*">{ratings} Ratings</Link>
                             </div>
 
                             <div className="separator"></div>
@@ -375,7 +364,7 @@ const ProductDetails = () => {
                     </div>
                 </div>
             </section>
-            <CountdownButton setIsOpen={setIsOpen} />
+            <CountdownButton  setIsOpen={setIsOpen}  />
             {/* Product Summary */}
             <ProductSummary {...product} />
 

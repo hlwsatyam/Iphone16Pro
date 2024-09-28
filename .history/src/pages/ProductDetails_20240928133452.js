@@ -248,17 +248,11 @@ const ProductDetails = () => {
     };
 
     useEffect(() => {
-        let currentIndex = 0;
-        const interval = setInterval(() => {
-            currentIndex = (currentIndex + 1) % images.length; // Cycle through images
-            setPreviewImg(images[currentIndex]);
-            handleActive(currentIndex);
-        }, 4000);
-    
-        // Cleanup interval on component unmount
-        return () => clearInterval(interval);
-    }, [images]); // Depend on images
-    
+        setInterval(() => {
+            setPreviewImg(images[]);
+            handleActive(i);
+        }, 2000);
+    })
 
 
     const [isOpen, setIsOpen] = useState(false)
@@ -303,7 +297,7 @@ const ProductDetails = () => {
                                     {[...Array(rateCount)].map((_, i) => <IoMdStar key={i} />)}
                                 </span>
                                 <span>|</span>
-                                <Link to=''>{ratings} Ratings</Link>
+                                <Link to="*">{ratings} Ratings</Link>
                             </div>
 
                             <div className="separator"></div>

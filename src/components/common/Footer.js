@@ -103,9 +103,9 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const styles = {
   footerContainer: {
-    backgroundColor: '#111', // Black background
+    backgroundColor: 'white', // Black background
     padding: '10px 0',
-    color: '#fff', // White text
+    color: "black", // White text
     textAlign: 'center',
     fontFamily: 'Arial, sans-serif',
     borderTop: '2px solid #f00', // Red border on top
@@ -119,16 +119,16 @@ const styles = {
   },
   footerIcons: {
     fontSize: '20px',
-    color: '#f00', // Red icons
+    color: "black", // Red icons
     transition: 'color 0.3s',
   },
   footerIconsHover: {
-    color: '#fff', // White on hover
+    color: "black", // White on hover
   },
   footerText: {
     marginTop: '10px',
     fontSize: '12px',
-    color: '#aaa', // Grey text for copyright
+    color: "black", // Grey text for copyright
   },
 };
 
