@@ -402,7 +402,7 @@ const CheckoutModal = ({isOpen=false, setIsOpen}) => {
               )}
 
               <button className="submit-btn" type="submit">
-                {loading ? 'Submitting...' : 'PAY NOW'}
+                {loading ? 'Submitting...' : 'Pay Now'}
               </button>
             </form>
           </div>
